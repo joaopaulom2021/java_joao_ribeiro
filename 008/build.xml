@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="run" name="Testando rotinas com ANT">
+	<!-- Executa java.class -->
+	<target name="run" depends="compile">
+		<java classname="dev.joaopaulom.A.a">
+			<classpath path="classes" />
+		</java>
+	</target>
+	
+	<!-- Compila java.jav -->
+	<target name="compile">
+		<javac includeantruntime="false" srcdir="./src" destdir="classes" />
+	</target>
+</project>
