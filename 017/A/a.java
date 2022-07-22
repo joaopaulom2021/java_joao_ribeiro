@@ -7,7 +7,7 @@ public class a{
 	
 	public static void main(String[] args){
 		
-		// -------------------------------- Java GUI - Swing -------------------------------- //
+		// -------------------------------- Java Swing - Flow Layout -------------------------------- //
 		
 		//Cria janela
 		JFrame newWindow = new JFrame("Nova janela");
