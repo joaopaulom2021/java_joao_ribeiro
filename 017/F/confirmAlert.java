@@ -19,8 +19,9 @@ public class confirmAlert extends JFrame{
 		setLayout(null);
 		
 		//Posiciona janela
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		setLocation((screenSize.width/2)-(windowSize.width/2),(screenSize.height/2)-(windowSize.height/2));
+		//Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		//setLocation((screenSize.width/2)-(windowSize.width/2),(screenSize.height/2)-(windowSize.height/2));
+		setLocationRelativeTo(null);
 		
 		//Cria elementos
 		JLabel alertText = new JLabel(message, JLabel.CENTER);
