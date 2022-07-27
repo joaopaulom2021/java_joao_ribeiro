@@ -3,6 +3,9 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import java.awt.Dimension;
+import java.awt.AWTEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class confirmAlert extends JFrame{
 	
@@ -14,6 +17,7 @@ public class confirmAlert extends JFrame{
 		setSize(windowSize);
 		setLocationRelativeTo(null);
 		setLayout(null);
+		setResizable(false);
 		
 		//Cria contentor
 		int contentWidth  = (windowSize.width/3);
@@ -35,6 +39,33 @@ public class confirmAlert extends JFrame{
 		
 		JButton btnErro = new JButton("N");
 		btnErro.setBounds(140, 50, 50, 30);
+		
+		//Cria eventos
+		btnOk.addActionListener(new ActionListener(){
+			
+			public void actionPerformed(ActionEvent event)
+			{
+				//Esconde btn's
+				btnOk.setVisible(false);
+				btnErro.setVisible(false);
+				
+				//Altera texto
+				alertText.setText("Operacao realizada com sucesso.");
+			}
+		});
+		
+		btnErro.addActionListener(new ActionListener(){
+			
+			public void actionPerformed(ActionEvent event)
+			{
+				//Esconde btn's
+				btnOk.setVisible(false);
+				btnErro.setVisible(false);
+				
+				//Altera texto
+				alertText.setText("Operacao cancelada.");
+			}
+		});
 		
 		//Apresenta janela
 		content.add(alertText);
