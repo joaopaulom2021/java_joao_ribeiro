@@ -37,13 +37,12 @@ public class Object extends JLabel{
 		this.y 	 	= y;
 	}
 	
-	public void addPopupMenu(String[] popupItems, String[] itemDescription, PopupSetText instancia)
+	public void addPopupMenu(String[] popupItems, String[] itemDescription)
 	{
 		for(int i=0; i<popupItems.length; i++)
 		{
 			labelItem[i] = new JMenuItem(popupItems[i]);
 			labelItem[i].setActionCommand(itemDescription[i]);
-			labelItem[i].addActionListener(instancia);
 			labelContainer.add(labelItem[i]);
 		}
 		
@@ -61,6 +60,11 @@ public class Object extends JLabel{
 			public void mouseEntered(MouseEvent event){}
 			public void mouseExited(MouseEvent event){}
 		});
+	}
+	
+	public void addPopupEvent(PopupSetText instancia, int i)
+	{
+		labelItem[i].addActionListener(instancia);
 	}
 	
 	public void objConstruct(String url)

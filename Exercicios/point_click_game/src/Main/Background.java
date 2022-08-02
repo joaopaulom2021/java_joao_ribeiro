@@ -31,11 +31,6 @@ public class Background extends JPanel{
 		this.y 	 	= y;
 	}
 	
-	public void addObject(Object element)
-	{
-		add(element);
-	}
-	
 	public void objConstruct(String url)
 	{
 		setBounds(x, y, width, height);
