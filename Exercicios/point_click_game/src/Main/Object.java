@@ -7,6 +7,7 @@ import javax.swing.JMenuItem;
 import javax.swing.SwingUtilities;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
+import Event.PopupSetText;
 
 // ---------------------------- Interface - Objeto ---------------------------- //
 
@@ -36,11 +37,13 @@ public class Object extends JLabel{
 		this.y 	 	= y;
 	}
 	
-	public void addPopupMenu(String[] label)
+	public void addPopupMenu(String[] popupItems, String[] itemDescription, PopupSetText instancia)
 	{
-		for(int i=0; i<label.length; i++)
+		for(int i=0; i<popupItems.length; i++)
 		{
-			labelItem[i] = new JMenuItem(label[i]);
+			labelItem[i] = new JMenuItem(popupItems[i]);
+			labelItem[i].setActionCommand(itemDescription[i]);
+			labelItem[i].addActionListener(instancia);
 			labelContainer.add(labelItem[i]);
 		}
 		

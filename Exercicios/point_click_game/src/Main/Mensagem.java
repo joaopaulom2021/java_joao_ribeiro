@@ -9,9 +9,9 @@ import java.awt.Font;
 public class Mensagem extends JTextArea{
 	
 	//Construtor
-	public Mensagem(String message)
+	public Mensagem()
 	{
-		super(message);
+		super();
 		setEditable(false);
 		setLineWrap(true);
 		setWrapStyleWord(true);
@@ -33,8 +33,9 @@ public class Mensagem extends JTextArea{
 		this.y 	 	= y;
 	}
 	
-	public void objConstruct(Font format, Color text)
+	public void objConstruct(String mensagem, Font format, Color text)
 	{
+		setText(mensagem);
 		setFont(format);
 		setForeground(text);
 		setBounds(x, y, width, height);
